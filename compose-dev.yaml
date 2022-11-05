@@ -1,0 +1,8 @@
+services:
+  go:
+    entrypoint:
+    - sleep
+    - infinity
+    image: dev-env-go:latest
+    init: true
+    

@@ -45,7 +45,12 @@ RUN INSTALL_ZSH=true UPGRADE_PACKAGES=true USERNAME=vscode USER_UID=1000 USER_GI
 && apt-get -y install graphviz  \
 && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-RUN ln -s /home/vscode /com.docker.devenvironments.code
+# RUN ln -s /home/vscode /com.docker.devenvironments.code
 
+# RUN groupadd docker && usermod -aG docker vscode
+
+USER vscode
+
+ENTRYPOINT ["sleep", "infinity"]
 USER vscode
 WORKDIR /home/vscode
